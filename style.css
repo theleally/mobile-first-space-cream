@@ -85,9 +85,51 @@ main {
   width: 11.2rem;
   text-align: center;
   letter-spacing: 0.2rem;
+
+  animation: topdown 700ms 700ms backwards;
 }
 
 .cards .card img {
   width: 100%;
   border-radius: 2rem;
+
+  animation: downtop 700ms 350ms backwards;
+
+  transition: all 200ms;
+}
+
+.cards .card img:hover {
+  transform: scale(1.1);
+  opacity: 0.4;
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 930px) {
+  
+  .cards {
+    grid-template-areas: "A B C";
+  }
 }
